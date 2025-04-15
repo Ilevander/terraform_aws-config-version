@@ -1,3 +1,11 @@
+!! NB: !!
+=========
+Il se peut que vous allez rencontrer un problème lier au push de votre IaC au SCM après avoir appliquer init , plan , applay , cela genère un fichier .terraform/ qui est très volumineu , chose qui pourra empécher la push d'IaC à notre branch même après le destroy des resource à l'aide de terraform.
+
+La solution est très simple , essayer de créer manuellement un fichier .gitignore , ajouter l'à-dessus en écrivant .terraform/ commiter l'changet pusher le en --force , si ça persiste àa pourra être lié aussi au .env qu'on doit vider son cache après m'authentification sur AWS via terraform , commiter cela aussi et pusher cette commit au branch , et ça va marcher ;)
+
+C'est bien! Non ? :)
+
 ![1](https://github.com/user-attachments/assets/a1ef6778-345d-435c-a605-e85ae14029f1)
 
 ![2](https://github.com/user-attachments/assets/632559eb-be03-4d86-99fc-88a8d4907b2f)
